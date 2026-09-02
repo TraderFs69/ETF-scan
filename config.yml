@@ -1,0 +1,43 @@
+markets:
+  CA: true
+  US: true
+
+benchmarks:
+  CA: XIC.TO
+  US: SPY
+
+download:
+  period: 2y
+  batch_size: 30
+  pause_seconds: 0.8
+  retries: 3
+  timeout_seconds: 30
+
+strategy:
+  minimum_score: 75
+  minimum_history_sessions: 250
+  minimum_price: 5.00
+  minimum_average_dollar_volume:
+    CA: 1000000
+    US: 10000000
+  minimum_rs_percentile: 70
+  pullback_lookback: 5
+  ema_touch_atr_tolerance: 0.35
+  maximum_extension_atr: 1.00
+  require_close_above_previous_high: true
+  rsi_period: 14
+  rsi_minimum: 40
+  rsi_maximum: 60
+  rsi_recent_ceiling: 55
+  atr_period: 14
+  volume_average_period: 20
+  minimum_relative_volume_bonus: 1.10
+  stop_atr: 1.50
+
+report:
+  top_n: 15
+  maximum_per_category: 2
+
+discord:
+  enabled: true
+  username: Scanner ETF — Trading en Action
